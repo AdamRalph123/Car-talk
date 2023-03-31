@@ -1,0 +1,1 @@
+web: gunicorn car-talk-blog.wsgi
