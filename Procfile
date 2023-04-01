@@ -1,1 +1,1 @@
-web: gunicorn car-talk-blog.wsgi
+web: gunicorn codestar.wsgi
