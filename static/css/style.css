@@ -1,6 +1,15 @@
+body {
+    font-family: 'Lato', sans-serif;
+}
+
+.nav-item {
+    font-size: 1.2rem;
+}
+
 .navbar-brand {
-    font-size: 1.4rem;
+    font-size: 2.4rem;
     font-weight: 700;
+    font-family: 'Road Rage', cursive;
 }
 
 .card {
