@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+<section class="account-container p-2 mt-2 mx-2">
+    {% if user.is authenticated %}
+    <div id="add-vehicle">
+        <div class="form-container p-2 mt-2">
+            <form class="Create a post" action="." method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form.as_p }}
+
+                {% if redirect_field_value %}
+                <input type="hidden" name="{ redirect_field_name}" value="{ redirect_field_value}">
+                {% endif %}
+                <button class="btn btn-signup right" type="submit">{% trans post %}</button>
+            </form>
+        </div>
+    </div>
+    {% else %}
+    <div class="container col md-7 rounded shadow p-5">
+        <p></p>Please login or create an account to create a post.></p>
+        <p>If you already have an account, Please
+            <span>
+                <a class="btn btn-outlined-success button" href="{% url 'account_login' %}"></a>
+            </span>
+        </p>
+        <p>If you do not have an account, please
+            <span>
+                <a class="btn btn-outlined-success button" href="{% url 'account_signup' %}"></a>
+            </span>
+        </p>
+    </div>
+    {% endif %}
+</section>
+{% end block content %}
