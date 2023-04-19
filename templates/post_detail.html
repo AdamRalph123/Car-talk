@@ -16,9 +16,11 @@
             <div class="d-none d-md-block col-md-6 masthead-image">
                 <!-- The featured image URL goes in the src attribute -->
                 {% if "placeholder" in post.featured_image.url %}
-                <img src="https://images.pexels.com/photos/12191128/pexels-photo-12191128.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" width="100%">
+                <img class="img-fluid mx-auto" 
+                src="https://images.pexels.com/photos/12191128/pexels-photo-12191128.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                alt="placeholder" width="50%">
                 {% else %}
-                <img src=" {{ post.featured_image.url }}" width="100%">
+                <img src=" {{ post.featured_image.url }}" class="img-fluid mx-auto" alt="post image">
                 {% endif %}
             </div>
         </div>
@@ -34,8 +36,23 @@
                 <p class="card-text ">
                     {{ post.content | safe }}
                 </p>
+                <span>
+                    {% if user.is_authenticated %}
+                    {% if user == post.author %}
+                    <h3>Edit post as: {{ user.username }}</h3>
+                    <p>Author is: {{ post.author }}</p>
+                    <a href="{% url 'post_update' post.slug %}">
+                        <button type="submit" class="btn btn-success btn-lg">Edit</button>
+                    </a>
+                    <h3>Delete post as: {{ user.username }}:</h3>
+                    <a href="{% url 'post_delete' post.slug %}">
+                        <button type="submit" class="btn btn-danger btn-lg">Delete</button>
+                    </a>
+                    {% endif %}
+                    {% endif %}
+                </span>
+                <br>
                 <div class="row">
-
                     <div class="col-1">
                         <strong>
                             {% if user.is_authenticated %}

@@ -8,7 +8,6 @@ from .forms import CommentForm, PostVehicleForm, VehicleForm
 from .forms import PostForm
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
-from django.utils import timezone
 from django.utils.text import slugify
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib.auth.mixins import (
@@ -97,11 +96,11 @@ class PostLike(View):
 @login_required
 def post_vehicle_view(request):
     if request.method == 'POST':
-        form =PostVehicleForm(request.POST)
+        form = PostVehicleForm(request.POST)
         if form.is_valid():
             return render(request, 'index.html')
         else:
-            form =PostVehicleForm()
+            form = PostVehicleForm()
         return render(request, 'PostVehicleForm.html', {'form': form})
 
 @login_required
@@ -130,11 +129,12 @@ def addVehicle(request):
             form = VehicleForm()
         return render(request, 'PostVehicleForm.html', {'form': form})
 
+
 class PostCreateView(LoginRequiredMixin, CreateView):
     model = Post
     fields = [
         'title', 'excerpt', 'featured_image', 'content',
-        'status', 'youtube_link'
+        'status'
     ]
 
     def form_valid(self, form):
@@ -152,14 +152,13 @@ class PostUpdateView(
     Model = Post
     fields = [
         'title', 'excerpt', 'featured_image', 'content',
-        'status', 'youtube_link']
+        'status']
 
     def form_valid(self, form):
         form.instance.author = self.request.user
         form.instance.slug = Text.slugify_unique(self.model, form.instance.title)
         return super().form_valid(form)
 
-    
     def test_func(self):
         post = self.get_object()
         if self.request.user == post.author:
@@ -170,7 +169,7 @@ class PostUpdateView(
         return "%(slug)s updated successfully" % {'slug': self.object.slug}
 
 
-class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, PostDeleteView):
+class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     model = Post
     success_url = '/'
 
@@ -178,6 +177,3 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, PostDeleteView):
         if self.author.user == post.author:
             return True
         return False
-
-    
-    
