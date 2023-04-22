@@ -1,4 +1,4 @@
-{% extends 'base.html' %} 
+{% extends 'base.html' %}
 {% block content %}
 {% load crispy_forms_tags %}
 {% load static %}
@@ -16,9 +16,9 @@
             <div class="d-none d-md-block col-md-6 masthead-image">
                 <!-- The featured image URL goes in the src attribute -->
                 {% if "placeholder" in post.featured_image.url %}
-                <img class="img-fluid mx-auto" 
-                src="https://images.pexels.com/photos/12191128/pexels-photo-12191128.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-                alt="placeholder" width="50%">
+                <img class="img-fluid mx-auto"
+                    src="https://images.pexels.com/photos/12191128/pexels-photo-12191128.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                    alt="placeholder" width="50%">
                 {% else %}
                 <img src=" {{ post.featured_image.url }}" class="img-fluid mx-auto" alt="post image">
                 {% endif %}
@@ -59,16 +59,18 @@
                             <form class="d-inline" action="{% url 'post_like' post.slug %}" method="POST">
                                 {% csrf_token %}
                                 {% if liked %}
-                                <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i class="fas fa-heart"></i></button>
+                                <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i
+                                        class="fas fa-heart"></i></button>
                                 {% else %}
-                                <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i class="far fa-heart"></i></button>
+                                <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i
+                                        class="far fa-heart"></i></button>
                                 {% endif %}
                             </form>
                             {% else %}
                             <span class="text-secondary"><i class="far fa-heart"></i></span>
                             {% endif %}
-                        <!-- The number of likes goes before the closing strong tag -->
-                        <span class="text-secondary">{{ post.number_of_likes }} </span>
+                            <!-- The number of likes goes before the closing strong tag -->
+                            <span class="text-secondary">{{ post.number_of_likes }} </span>
                         </strong>
                     </div>
                     <div class="col-1">
