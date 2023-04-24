@@ -106,11 +106,11 @@ def post_vehicle_view(request):
 @login_required
 def post_vehicle(request):
     if request.method == 'POST':
-        form =PostVehicleForm(request.POST)
+        form = PostVehicleForm(request.POST)
         if form.is_valid():
             return render(request, 'index.html')
         else:
-            form =PostVehicleForm()
+            form = PostVehicleForm()
         return render(request, 'post_vehicle.html', {'form': form})
 
 @login_required

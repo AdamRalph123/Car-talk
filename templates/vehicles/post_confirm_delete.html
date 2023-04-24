@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+<section class="account-container p-2 mt-2 mx-2">
+    <div id="delete=vehicle">
+        {% if user.is_authenticated %}
+        {% if user == post.author %}
+        <h2>Please confirm your post deletion</h2>
+        <div class="form-container p-2 mt-2">
+            <form mathod=""POST>
+                {% csrf_token %}
+                <fieldset class="form-group">
+                    <legend class="border-bottom mb4">Warning - Deleting post</legend>
+                    <h2>Are you sure you want to delete post "{{ object.title }}"</h2>
+                </fieldset>
+                <button class="btn btn-outline-danger primary-action mt-2" type="submit">Yes, delete</button>
+                <a href="{% url 'home' %}" class="btn btn-outline-success mt-2">Cancel</a>
+                <a href="/" class="btn btn-outline-secondary mt-2">Home page</a>
+            </form>
+        </div>
+        {% else %}
+        <h2>You are not the author of the post for deletion</h2>
+        {% endif %}
+        {% else %}
+        <h2>You are not logged in for post deletion</h2>
+        {% endif %}
+    </div>
+    {% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+<section class="account-containern p-2 mt-2 mx-2">
+    <div id="post-vehicle">
+        <h2>Please enter your vehicle details</h2>
+
+        <div class="form-container p-2 mt-2">
+            <form action="" method="POST" enctype="multipart/form-data">
+                {% csrf_token% }
+                <fieldset class="form-group">
+                    <legend class="border-bottom mb4">Edit post</legend>
+                    {{form | crispy}}
+                </fieldset>
+                <div class="form-group">
+                    <button class="btn btn-outline" type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}

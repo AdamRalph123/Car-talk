@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+<section class="account-container p-2 mt-2 mx-2">
+    <div id="add-vehicle">
+        {% if user is.authenticated %}
+        <div class="form-container">
+            <form action="." class="add-vehicle-form" methid="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                {% for fields in form %}
+                <div class="flex mt-2 form-pair">
+                    {{fields.label_tag}}
+                    {{fields}}
+                </div>
+                {% endfor %}
+
+                <button type="submit" class="btn primary-action mt-2" value="submit">Submit</button>
+            </form>
+        </div>
+        {% else %}
+        <h2>You are logged in</h2>
+        {% endif %}
+
+    </div>
+</section>
+{% endblock %}
