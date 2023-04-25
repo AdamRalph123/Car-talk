@@ -48,12 +48,12 @@
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="{% url 'home' %}" role="button"
               data-bs-toggle="dropdown" aria-expanded="false">
-              Vehicles
+             Cars
             </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="{% url 'home' %}">List</a></li>
-              <li><a class="dropdown-item" href="{% url 'post-create %'}">Create</a></li>
-            </ul>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="{% url 'home' %}">List</a>
+              <a class="dropdown-item" href="{% url 'post-create' %}">Create</a>
+            </div>
           </li>
           {% if user.is_superuser %}
           <li class="nav-item">

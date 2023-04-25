@@ -44,7 +44,7 @@ class PostDetail(View):
                 "comment_form": CommentForm()
             },
         )
-    
+
     def post(self, request, slug, *args, **kwargs):
 
         queryset = Post.objects.filter(status=1)
@@ -93,8 +93,9 @@ class PostLike(View):
 
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
+
 @login_required
-def post_vehicle_view(request):
+def post_Vehicle_view(request):
     if request.method == 'POST':
         form = PostVehicleForm(request.POST)
         if form.is_valid():
@@ -103,15 +104,16 @@ def post_vehicle_view(request):
             form = PostVehicleForm()
         return render(request, 'PostVehicleForm.html', {'form': form})
 
+
 @login_required
-def post_vehicle(request):
+def post_Vehicle(request):
     if request.method == 'POST':
         form = PostVehicleForm(request.POST)
         if form.is_valid():
             return render(request, 'index.html')
         else:
             form = PostVehicleForm()
-        return render(request, 'post_vehicle.html', {'form': form})
+        return render(request, 'post_Vehicle.html', {'form': form})
 
 @login_required
 def addVehicle(request):
@@ -119,9 +121,9 @@ def addVehicle(request):
     if request.methodn == 'POST':
         form = VehicleForm(request.POST, request.FILES)
         if form.is_valid():
-            vehicle = form.save(commit=False)
-            vehicle.author = request.user
-            vehicle.save()
+            Vehicle = form.save(commit=False)
+            Vehicle.author = request.user
+            Vehicle.save()
             messages.success(request, 'Your Car was created successfully')
             return HttpResponseRedirect(reverse('home'))
 
