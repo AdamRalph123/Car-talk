@@ -91,7 +91,7 @@ class PostLike(View):
         else:
             post.likes.add(request.user)
 
-        return HttpResponseRedirect(reverse('post_detail', args=[slug]))
+        return HttpResponseRedirect(reverse("post_detail", args=[slug]))
 
 
 @login_required
@@ -114,6 +114,7 @@ def post_Vehicle(request):
         else:
             form = PostVehicleForm()
         return render(request, 'post_Vehicle.html', {'form': form})
+
 
 @login_required
 def addVehicle(request):
@@ -141,7 +142,8 @@ class PostCreateView(LoginRequiredMixin, CreateView):
 
     def form_valid(self, form):
         form.instance.author = self.request.user
-        form.instance.slug = Text.slugify_unique(self.model, form.instance.title)
+        form.instance.slug = Text.slugify_unique
+        (self.model, form.instance.title)
         return super().form_valid(form)
 
 
@@ -158,7 +160,8 @@ class PostUpdateView(
 
     def form_valid(self, form):
         form.instance.author = self.request.user
-        form.instance.slug = Text.slugify_unique(self.model, form.instance.title)
+        form.instance.slug = Text.slugify_unique
+        (self.model, form.instance.title)
         return super().form_valid(form)
 
     def test_func(self):
