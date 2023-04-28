@@ -4,12 +4,12 @@
 {% load static %}
 
 <section class="account-containern p-2 mt-2 mx-2">
-    <div id="post-Vehicle">
+    <div id="post-vehicle">
         <h2>Please enter your Vehicle details</h2>
 
         <div class="form-container p-2 mt-2">
             <form action="" method="POST" enctype="multipart/form-data">
-                {% csrf_token% }
+                {% csrf_token %}
                 <fieldset class="form-group">
                     <legend class="border-bottom mb4">Edit post</legend>
                     {{form | crispy}}

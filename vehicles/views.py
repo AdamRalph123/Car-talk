@@ -23,6 +23,39 @@ class PostList(generic.ListView):
     paginate_by = 6
 
 
+class Text:
+
+    def slugify_unique(model, title):
+        '''
+        Given a DB model and a title, return a unique slug that is unique \
+        to all other slug fields of the given DB model.
+     
+        Arguments
+        model - Must be a Django database model that has \
+                   a slug field called "slug".
+        title - The string used to create the slug.
+
+        Returns - A slug that is unique across all instances of the model.
+        '''
+        from django.utils.text import slugify
+        slug = slugify(title)
+        existing_slugs = []
+        try:
+            [existing_slugs.append(str(i.slug)) for i in model.objects.all()]
+        except IndexError:
+            print("There was no slug field found for {}".format(model))
+            return slug
+        if slug in existing_slugs:
+            date_slug = slug + "-" + timezone.now().strftime("%Y%m%d")
+            if date_slug in existing_slugs:
+                long_slug = date_slug + timezone.now().strftime("%m%s")
+                return long_slug
+            else:
+                return date_slug
+        else:
+            return slug
+
+
 class PostDetail(View):
 
     def get(self, request, slug, *args, **kwargs):
@@ -81,6 +114,7 @@ class PostDetail(View):
 def delete_post(request, post_id=None):
     post_to_delete = Post.objects.get(id=post_id)
     post_to_delete.delete(reverse('home'))
+    return HttpResponseRedirect(reverse('home'))
 
 
 class PostLike(View):
@@ -91,11 +125,11 @@ class PostLike(View):
         else:
             post.likes.add(request.user)
 
-        return HttpResponseRedirect(reverse("post_detail", args=[slug]))
+        return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
 
 @login_required
-def post_Vehicle_view(request):
+def post_vehicle_view(request):
     if request.method == 'POST':
         form = PostVehicleForm(request.POST)
         if form.is_valid():
@@ -106,14 +140,14 @@ def post_Vehicle_view(request):
 
 
 @login_required
-def post_Vehicle(request):
+def post_vehicle(request):
     if request.method == 'POST':
         form = PostVehicleForm(request.POST)
         if form.is_valid():
             return render(request, 'index.html')
         else:
             form = PostVehicleForm()
-        return render(request, 'post_Vehicle.html', {'form': form})
+        return render(request, 'post_vehicle.html', {'form': form})
 
 
 @login_required
@@ -122,9 +156,9 @@ def addVehicle(request):
     if request.methodn == 'POST':
         form = VehicleForm(request.POST, request.FILES)
         if form.is_valid():
-            Vehicle = form.save(commit=False)
-            Vehicle.author = request.user
-            Vehicle.save()
+            vehicle = form.save(commit=False)
+            vehicle.author = request.user
+            vehicle.save()
             messages.success(request, 'Your Car was created successfully')
             return HttpResponseRedirect(reverse('home'))
 
