@@ -9,6 +9,7 @@ from .forms import PostForm
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.utils.text import slugify
+from django.utils import timezone
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib.auth.mixins import (
     LoginRequiredMixin,
@@ -21,39 +22,6 @@ class PostList(generic.ListView):
     queryset = Post.objects.filter(status=1).order_by("-created_on")
     template_name = "index.html"
     paginate_by = 6
-
-
-class Text:
-
-    def slugify_unique(model, title):
-        '''
-        Given a DB model and a title, return a unique slug that is unique \
-        to all other slug fields of the given DB model.
-     
-        Arguments
-        model - Must be a Django database model that has \
-                   a slug field called "slug".
-        title - The string used to create the slug.
-
-        Returns - A slug that is unique across all instances of the model.
-        '''
-        from django.utils.text import slugify
-        slug = slugify(title)
-        existing_slugs = []
-        try:
-            [existing_slugs.append(str(i.slug)) for i in model.objects.all()]
-        except IndexError:
-            print("There was no slug field found for {}".format(model))
-            return slug
-        if slug in existing_slugs:
-            date_slug = slug + "-" + timezone.now().strftime("%Y%m%d")
-            if date_slug in existing_slugs:
-                long_slug = date_slug + timezone.now().strftime("%m%s")
-                return long_slug
-            else:
-                return date_slug
-        else:
-            return slug
 
 
 class PostDetail(View):
