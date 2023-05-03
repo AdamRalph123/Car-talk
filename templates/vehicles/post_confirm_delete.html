@@ -6,7 +6,7 @@
 <section class="account-container p-2 mt-2 mx-2">
     <div id="delete-vehicle">
         {% if user.is_authenticated %}
-        {% if user == post.author %}
+        {% if user ==  post.author %}
         <h2>Please confirm your post deletion</h2>
         <div class="form-container p-2 mt-2">
             <form mathod=""POST>
