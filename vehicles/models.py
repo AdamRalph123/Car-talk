@@ -18,6 +18,7 @@ class Post(models.Model):
     excerpt = models.TextField(blank=True)
     updated_on = models.DateTimeField(auto_now=True)
     content = models.TextField()
+    youtube_link = models.URLField(max_length=200, blank=True, null=True)
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)
     likes = models.ManyToManyField(User, related_name='blogpost_like', blank=True)  # noqa
@@ -59,6 +60,7 @@ class Vehicle(models.Model):
     updated_on = models.DateTimeField(auto_now=True)
     content = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
+    youtube_link = models.URLField(max_length=200, blank=True, null=True)
     status = models.IntegerField(choices=STATUS, default=0)
     likes = models.ManyToManyField(User, related_name='vehiclepost_like', blank=True)  # noqa
 
