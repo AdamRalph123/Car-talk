@@ -41,7 +41,6 @@ class VehicleForm(forms.ModelForm):
             'content',
             'status',
             # 'likes'
-            'youtube_link',
         )
 
         def __init__(self, *args, **kwargs):

@@ -178,7 +178,7 @@ class PostCreateView(LoginRequiredMixin, CreateView):
     model = Post
     fields = [
         'title', 'excerpt', 'featured_image', 'content',
-        'status', 'youtube_link']
+        'status']
 
     def form_valid(self, form):
         form.instance.author = self.request.user
@@ -195,7 +195,7 @@ class PostUpdateView(
     Model = Post
     fields = [
         'title', 'excerpt', 'featured_image', 'content',
-        'status', 'youtube_link']
+        'status']
 
     def form_valid(self, form):
         form.instance.author = self.request.user

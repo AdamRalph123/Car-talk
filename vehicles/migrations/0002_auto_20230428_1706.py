@@ -35,7 +35,7 @@ class Migration(migrations.Migration):
                 ('author', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='Vehicle_posts', to=settings.AUTH_USER_MODEL)),  # noqa
                 ('likes', models.ManyToManyField(blank=True, related_name='blogpost_like', to=settings.AUTH_USER_MODEL)),  # noqa
             ],
-             options={
+            options={
                 'ordering': ['-created_on'],
             },
         ),
