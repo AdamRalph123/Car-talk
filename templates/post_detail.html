@@ -37,7 +37,7 @@
                 </p>
                 <span>
                     {% if user.is_authenticated %}
-                    {% if user == post.author %}
+                    {% if user ==  post.author %}
                     <h3>Edit post as: {{ user.username }}</h3>
                     <p>Author is: {{ post.author }}</p>
                     <a href="{% url 'post_update' post.slug %}">

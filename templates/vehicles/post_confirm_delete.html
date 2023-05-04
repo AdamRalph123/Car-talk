@@ -16,8 +16,8 @@
                     <h2>Are you sure you want to delete post "{{ object.title }}"</h2>
                 </fieldset>
                 <button class="btn btn-outline-danger primary-action mt-2" type="submit">Yes, delete</button>
-                <a href="{% url 'home' %}" class="btn btn-outline-success mt-2">Cancel</a>
-                <a href="/" class="btn btn-outline-secondary mt-2">Home page</a>
+                <a class="btn btn-outline-success mt-2" href="{% url 'home' %}">Cancel</a>
+                <a class="btn btn-outline-secondary mt-2" href="/">Home page</a>
             </form>
         </div>
         {% else %}

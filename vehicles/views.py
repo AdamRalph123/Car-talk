@@ -24,7 +24,7 @@ class Text:
         '''
         Given a DB model and a title, return a unique slug that is unique \
         to all other slug fields of the given DB model.
-    
+
         Arguments
         model - Must be a Django database model that has \
                    a slug field called "slug".
@@ -155,9 +155,9 @@ def post_vehicle(request):
 
 @login_required
 def addVehicle(request):
-    
+
     form = VehicleForm(request.POST or None, request.FILES or None)
-    
+
     if request.method == 'POST':
         form = VehicleForm(request.POST, request.FILES)
         if form.is_valid():
@@ -170,7 +170,6 @@ def addVehicle(request):
 
     else:
         form = VehicleForm()
-     
     return render(request, 'PostVehicleForm.html', {'form': form})
 
 
@@ -192,7 +191,7 @@ class PostUpdateView(
     SuccessMessageMixin,
     UpdateView
         ):
-    Model = Post
+    model = Post
     fields = [
         'title', 'excerpt', 'featured_image', 'content',
         'status']
@@ -210,7 +209,7 @@ class PostUpdateView(
             return True
         return False
 
-    def get_success_message(self, cleanned_data):
+    def get_success_message(self, cleaned_data):
         return "%(slug)s updated successfully" % {'slug': self.object.slug}
 
 
