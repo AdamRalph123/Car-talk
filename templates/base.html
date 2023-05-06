@@ -36,7 +36,7 @@
     <div class="container-fluid">
       <a class="navbar-brand" href="{% url 'home' %}">Car Talk</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
-       aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarText">
@@ -46,9 +46,9 @@
           </li>
           {% if user.is_authenticated %}
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="{% url 'home' %}" role="button"
-              data-bs-toggle="dropdown" aria-expanded="false">
-             Cars
+            <a class="nav-link dropdown-toggle" href="{% url 'home' %}" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Cars
             </a>
             <div class="dropdown-menu">
               <a class="dropdown-item" href="{% url 'home' %}">List</a>
@@ -57,8 +57,7 @@
           </li>
           {% if user.is_superuser %}
           <li class="nav-item">
-            <a class="nav-link" aria-label="admin" href="{% url 'admin:index' %}"><i
-              class="fa fa-unlock"></i>Admin</a>
+            <a class="nav-link" aria-label="admin" href="{% url 'admin:index' %}"><i class="fa fa-unlock"></i>Admin</a>
           </li>
           {% endif %}
           <li class="nav-item">
@@ -77,7 +76,7 @@
       </div>
     </div>
   </nav>
- 
+
   <div class="container">
     <div class="row">
       <div class="col-md-8 offset-md-2">
@@ -97,9 +96,16 @@
     {% endblock content %}
   </main>
 
-  <footer>
-
-
+  <footer class="footer mt-auto py-3 dark-bg">
+    <p class="m-0 text-center text-white">Follow to stay connected
+    <a href="https://www.facebook.com/" target="_blank" class="btn btn-floating bt-lg text-white">
+      <i class="fa-brands fa-facebook"></i></a>
+    <a href="https://twitter.com/" target="_blank" class="btn btn-floating bt-lg text-white">
+      <i class="fa-brands fa-twitter"></i></a>
+    <a href="https://www.instagram.com/" target="_blank" class="btn btn-floating bt-lg text-white">
+      <i class="fa-brands fa-instagram"></i></a>
+    <a href="https://www.youtube.com/" target="_blank" class="btn btn-floating bt-lg text-white">
+      <i class="fa-brands fa-youtube"></i></a></p>
   </footer>
 
   <script>
