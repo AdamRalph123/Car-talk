@@ -12,6 +12,11 @@ body {
     font-family: 'Road Rage', cursive;
 }
 
+.fab {
+    color: black;
+    font-size: 1.6rem;
+}
+
 .card {
     border: none;
     background-color: transparent;
