@@ -36,7 +36,7 @@
                     {{ post.content | safe }}
                 </p>
                 <span>
-                    
+                    <!-- Edit and delete option button for the author of the post -->
                     {% if user.is_authenticated %}
                     {% if user ==  post.author %}
                     <h3>Edit Post as: {{ user.username }}</h3>

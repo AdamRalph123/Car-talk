@@ -7,6 +7,7 @@
     <div id="add-vehicle">
         {% if user is.authenticated %}
         <div class="form-container">
+             <!-- Mulitipart/form-data to get form to work -->
             <form action="." class="add-vehicle-form" method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
                 {% for fields in form %}

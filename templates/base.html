@@ -30,7 +30,7 @@
   <!-- Custom styles for this template -->
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
-
+<!-- Navbar -->
 <body class="d-flex flex-column h-100 main-bg">
   <nav class="navbar navbar-expand-lg bg-light">
     <div class="container-fluid">
@@ -45,6 +45,7 @@
             <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
           </li>
           {% if user.is_authenticated %}
+          <!-- Authenticated user menu option dropdown -->
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="{% url 'home' %}" role="button" data-bs-toggle="dropdown"
               aria-expanded="false">
@@ -56,6 +57,7 @@
             </div>
           </li>
           {% if user.is_superuser %}
+          <!--When superuser is logged in they can access the admin panel easier -->
           <li class="nav-item">
             <a class="nav-link" aria-label="admin" href="{% url 'admin:index' %}"><i class="fa fa-unlock"></i>Admin</a>
           </li>
@@ -96,7 +98,8 @@
     {% endblock content %}
   </main>
 
-  <footer class="bg-light text-center text-white">
+  <!-- Footer --->
+  <footer class="text-center text-white">
     <!-- Grid container -->
     <div class="container p-4 pb-0">
       <!-- Section: Social media -->
@@ -132,7 +135,7 @@
     <!-- Grid container -->
   
   </footer>
-
+  
   <script>
     setTimeout(function () {
       let messages = document.getElementById('msg');

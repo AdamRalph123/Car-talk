@@ -2,6 +2,7 @@ body {
     font-family: 'Lato', sans-serif;
 }
 
+/** navigation section */
 .nav-item {
     font-size: 1.2rem;
 }
@@ -12,6 +13,7 @@ body {
     font-family: 'Road Rage', cursive;
 }
 
+/* footer social media icons */
 .fab {
     color: black;
     font-size: 1.6rem;
@@ -33,7 +35,7 @@ body {
     left: -2px;
     background-color: #23BBBB;
 }
-
+/* users name */
 .author {
     color: white;
     margin: 4px;
@@ -50,6 +52,7 @@ body {
     
 }
 
+/*text on image card */
 .masthead-text {
     background-color: #445261;
     color: white;
@@ -61,6 +64,7 @@ body {
     overflow: hidden;
 }
 
+/* blog post whren clicked on */
 .masthead-image:after {
     content: "";
     position: absolute;
