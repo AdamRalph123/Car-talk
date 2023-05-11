@@ -36,7 +36,7 @@
                     {{ post.content | safe }}
                 </p>
                 <span>
-                    <!-- Edit and delete option button for the author of the post -->
+                    
                     {% if user.is_authenticated %}
                     {% if user ==  post.author %}
                     <h3>Edit Post as: {{ user.username }}</h3>
@@ -44,6 +44,7 @@
                     <a href="{% url 'post_update' post.slug %}">
                         <button type="submit" class="btn btn-success btn-lg">Edit</button>
                     </a>
+                    
                     <h3>Delete Post as: {{ user.username }}:</h3>
                     <a href="{% url 'post_delete' post.slug %}">
                         <button type="submit" class="btn btn-danger btn-lg">Delete</button>
