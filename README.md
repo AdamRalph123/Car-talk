@@ -140,3 +140,119 @@ I used [balsamiq](https://balsamiq.com/wireframes) to design my site wireframes.
 
 
 ## Features
+
+### Existing features
+
+- **Home page Logged out**
+
+    - When users visit the blog they have a home, register and login navigation, users can see the blog posts including the author, time and date when the post was uploaded and the numbers of likes.
+
+    ![screenshot](assets/screenshots/home%20page%20logged%20out.png)
+
+- **View post logged out**
+
+    - When the user clicks on a blog post they get to see more information about the post and also can see the number of likes and comments.
+
+    ![screenshot](assets/screenshots/view%20post%20logged%20out.png)
+
+- **Comment section logged out**
+
+    - Users can see comments underneath the blog post with the name of the user that uploaded the blog with the time and date.
+
+    ![screenshot](assets/screenshots/comment%20section%20logged%20out.png)
+
+- **Site pagination**
+
+    - There is a next button at the bottom which appears when the page has more than 6 posts.
+
+    ![screenshot](assets/screenshots/site%20pagination.png)
+
+- **Sign up**
+
+    - When users register an account they will be asked to enter a username, email address and password.
+
+    ![screenshot](assets/screenshots/sign%20up%20page.png)
+
+- **Must fill in**
+
+    - If a user does not fill in all required fileds when registering an account a message will appear.
+
+    ![screenshot](assets/screenshots/must%20fill%20in%20field.png)
+
+- **Sign in meaasge**
+
+    - When the user logs in a sign in message will appear for a few seconds.
+
+    ![screenshot](assets/screenshots/sign%20in%20message.png)
+
+- **Sign in**
+
+    - When users sign in they will be asked for their username and passowrd and if enetered incorrectly they will be notified there also a remember me button if they user wants to have thir username and password saved.
+
+    ![screenshot](assets/screenshots/sign%20in%20page%20features.png)
+
+- **Dropdown menu**
+
+    - when users are logged in a dropdown menu will appear with a list option which will bring them to a list of the posts from new to old and a create navigation which will allow the user to create a post.
+
+    ![screenshot](assets/screenshots/dropdown%20menu.png)
+
+- **Comment section logged in**
+
+    - When the user is logged in they are able to comment on another users post which will have to be approved by the admin before appearing in the comment section.
+
+    ![screenshot](assets/screenshots/comment%20section%20logged%20in.png)
+
+- **Approval comment**
+
+    - Users will be shown an awaiting approval message when they comment on a post.
+
+    ![screenshot](assets/screenshots/approval%20comment.png)
+
+- **Create a post**
+
+    - When the user is logged in they are able to create a post with a title, description, upload an image and a  publish or draft button.
+
+    ![screenshot](assets/screenshots/create%20post%20page.png)
+
+- **Edit and delete author**
+
+    - If the user wants to delete or edit a post its has to be their own post. An edit and delete button will be shown underneath their post.
+
+    ![screenshot](assets/screenshots/edit%20and%20delete%20post%20author.png)
+
+- **Delete post comformation**
+
+    -If the author of the post presses the delete button they will be a brought to a comfirmation page.
+
+    ![screenshot](assets/screenshots/delete%20post%20comfiration.png)
+
+- **Sign out comfirmation**
+
+    - A sign out comfirmation message will be shown when the user wants to sign out
+
+    ![screenshot](assets/screenshots/signed%20out%20message.png)
+
+- **Sign out message**
+
+    - When the user signs out they will be notified with a message.
+
+    ![screenshot](assets/screenshots/signed%20out%20message.png)
+
+
+- **Admin logged in**
+
+    - When the admin/superuser is logged in an admin navigation will be shown which will bring them to the admin pannel as quicker access.
+
+    ![screenshot](assets/screenshots/admin%20logged%20in.png)
+
+### Future features
+
+These are some of features which can be implemented in the future. These features have be logged as wont have in my MoSCoW prioritization.
+
+- Social accounts
+    - I would like to add a feature which allows users to log in using differnet social accounts.
+- Profile page
+    - I would like to be bale to add a feature which allows users to make a profile page.
+- Share posts
+    - I would like to add a feature which allows users to share eachothers posts.
