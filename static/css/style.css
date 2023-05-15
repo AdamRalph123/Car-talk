@@ -2,7 +2,7 @@ body {
     font-family: 'Lato', sans-serif;
 }
 
-/** navigation section */
+/* navigation section */
 .nav-item {
     font-size: 1.2rem;
 }
@@ -52,7 +52,7 @@ body {
     
 }
 
-/*text on image card */
+/* text on image card */
 .masthead-text {
     background-color: #445261;
     color: white;
@@ -64,7 +64,7 @@ body {
     overflow: hidden;
 }
 
-/* blog post whren clicked on */
+/* blog post when clicked on */
 .masthead-image:after {
     content: "";
     position: absolute;
