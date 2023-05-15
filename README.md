@@ -72,6 +72,71 @@ I used [balsamiq](https://balsamiq.com/wireframes) to design my site wireframes.
 
 </details>
 
-<details>
 
-#### 
+### Sign up
+
+<details>
+<summary>Click here to view sign up wireframe</summary>
+
+### Sing up
+![screenshot](assets/wireframes/sign%20up%20wireframe.png)
+
+</details>
+
+
+### Sign in
+
+<details>
+<summary>Click here to view sign in wireframes</summary>
+
+### Sing in
+![screenshot](assets/wireframes/sign%20in%20wireframe.png)
+
+</details>
+
+
+### Create a post
+
+<details>
+<summary>Click here to view create a post wireframes</summary>
+
+### Create a post
+![screenshot](assets/wireframes/create%20post%20wireframe.png)
+
+</details>
+
+
+### Comment section
+
+<details>
+<summary>Click here to view comment section wireframes</summary>
+
+### Comment section
+![screenshot](assets/wireframes/comment%20section%20as%20user.png)
+
+</details>
+
+
+### Edit and delete post
+
+<details>
+<summary>Click here to view edit and delete post</summary>
+
+### Edit and delete post
+![screenshot](assets/wireframes/edit%20and%20delete%20post.png)
+
+</details>
+
+
+### Delete post author
+
+<details>
+<summary>Click here to view edit and delete post</summary>
+
+### Delete post author
+![screenshot](assets/wireframes/delete%20post%20author.png)
+
+</details>
+
+
+## Features
