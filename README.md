@@ -256,3 +256,60 @@ These are some of features which can be implemented in the future. These feature
     - I would like to be bale to add a feature which allows users to make a profile page.
 - Share posts
     - I would like to add a feature which allows users to share eachothers posts.
+
+
+## Database design
+
+I created an entity relationship diagram using [balsamiq](https://balsamiq.com/wireframes). This help me to understand the database design.
+
+### Entity relationship diagram
+
+![screenshot](assets/wireframes/database%20wireframe.png)
+
+
+## Tools and technologies used
+
+- [HTML](https://en.wikipedia.org/wiki/HTML) was used for the main site content.
+- [CSS](https://en.wikipedia.org/wiki/CSS) was used for the design and layout.
+- [bootstrap](https://getbootstrap.com/) was used for the front-end CSS framework responsiveness and pre-built components.
+- [JavaScript](https://en.wikipedia.org/wiki/JavaScript) was used for the user interaction on the site for automatically closing Django messages.
+- [Python](https://en.wikipedia.org/wiki/Python_(programming_language)) was used as the back-end programming language.
+- [GitHub](https://github.com/) was used for secure online code storage.
+- [Gitpo](https://www.gitpod.io/) was used as a cloud-based IDE for development.
+- [Django](https://www.djangoproject.com/) was used as the python framwork for the site.
+- [PostgreSQL](https://www.postgresql.org/) was used as the relational database management.
+- [ElphantSQL](https://www.elephantsql.com/) was used as the postgres database.
+- [Heroku](https://www.heroku.com/) was used as hosting the deployed back-end site.
+- [Cloudinary](https://cloudinary.com/) was used for online static storage.
+- [Balsamiq](https://balsamiq.com/wireframes/) was used for to design my site wireframe.
+- [Google fonts](https://fonts.google.com/) was used for my fonts throughout my site.
+- [Font awesome](https://fontawesome.com/) was used for my icons I used throughout my site.
+
+
+## Agile developemnt 
+
+### GitHub projects
+
+[GitHub Projects](https://github.com/AdamRalph123/Car-talk-blog/projects?query=is%3Aopen) served as an agile tool for this project. User stories were used to map out the development progress of this project, It helped me to understand what was nedded to be done and what was done.
+
+![screenshot](assets/project-and-issues/project%20image.png)
+
+### GitHub issues
+
+[Github issues](https://github.com/AdamRalph123/Car-talk-blog/issues) served as anothet agile tool.
+
+![Open issues](assets/project-and-issues/open%20issues.png) has a label of **Wont have** as these issues will be implemented in the future.
+
+![Closed issues](assets/project-and-issues/closed%20issues.png) has labaels of **Must have** and **Should have** which is what the site must contain and what the site should contain.
+
+### MoSCow prioritization
+
+- **Must have**: The 'MUST' level requirements are those requirements which will definitely be included to be delivered.
+- **Should have**: The 'SHOULD' level requirements are those requirements which should be included if at all possible. If the project has capacity and time and it will not jeopardise any of the 'must have' requirements.
+- **Could have**: The 'COULD' level requirements are the requirements which could be included if it doesnt have any impact on any of the 'should' or 'must' requirements.
+- **Wont have**: The 'WONT' level requirements tend to be the requirements which will not be  included or implemented this time but are requirements that would be favoured for a future delivery or implementation.
+
+
+## Testing
+
+For all testing, please refer to the [TESTING.md](TESTING.md) file.
