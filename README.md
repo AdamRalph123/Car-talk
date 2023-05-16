@@ -1,7 +1,7 @@
 # __Car Talk Blog - Portfolio Project 4__
 ![mockup](assets/testing/am%20i%20responsive.png)
 
-Car Talk Blog is a blog is a blog where users can register an account which allows them to like/unlike posts, comment on a post and once logged in users can upload their own post and also edit/delete their post.
+Car Talk Blog is a blog where users can register an account which allows them to like/unlike posts, comment on a post and once logged in users can upload their own post and also edit/delete their post.
 
 The aim of this project is for users to easily sign up and connect with other users on the blog by liking and commenting on eachothers posts.
 
@@ -231,7 +231,7 @@ I used [balsamiq](https://balsamiq.com/wireframes) to design my site wireframes.
 
     - A sign out comfirmation message will be shown when the user wants to sign out
 
-    ![screenshot](assets/screenshots/signed%20out%20message.png)
+    ![screenshot](assets/screenshots/sign%20out%20comfirmation.png)
 
 - **Sign out message**
 
@@ -245,6 +245,13 @@ I used [balsamiq](https://balsamiq.com/wireframes) to design my site wireframes.
     - When the admin/superuser is logged in an admin navigation will be shown which will bring them to the admin pannel as quicker access.
 
     ![screenshot](assets/screenshots/admin%20logged%20in.png)
+
+
+- **Footer**
+
+    - The footer section is where users can open up social accounts.
+
+    ![sccreenshot](assets/screenshots/footer.png)
 
 ### Future features
 
@@ -313,3 +320,123 @@ I created an entity relationship diagram using [balsamiq](https://balsamiq.com/w
 ## Testing
 
 For all testing, please refer to the [TESTING.md](TESTING.md) file.
+
+
+## Bugs
+
+There was not any major bugs while working on this site, some were just simple spelling mistakes, which would cause a certain page to not open.
+
+### Fixed bugs
+
+user.username to author comparison did not work with user.username == post.author, so I found I had to compare user == post.author. Thanks to [stackoverflow](https://stackoverflow.com/questions/43879330/djangounable-to-compare-the-logged-in-user-with-the-author-of-the-post).
+
+There are no known bugs left on this site.
+
+
+## Deployment 
+
+The live deployed application can be found on [Heroku](https://git.heroku.com/car-talk-blog.git).
+
+### ElpephantSQL 
+
+This project uses [ElephantSQL](https://www.elephantsql.com/) for postgreSQL database.
+
+To obtain your own Postgres database, sign-up with your GitHub account, then follow these steps:
+- Click **Create new instance** to start a new database.
+- Provide a name, this is commonly the name of your project.
+- Select the **Ting turtle plan** as this is free.
+- You can leave the **tags** blank.
+- Select the **Region** and **Data center** closest to you.
+- Once created, you can click on the nee database name where you can view the database URL and password.
+
+### Cloudinary API 
+
+This project uses the [Cloudinary API](https://cloudinary.com/) to store media assets online.
+
+To obtain your own cloudinary API key, create an account and log in.
+- For **Primary interest**, you can choose **programmable media for image and video API**.
+- On your cloudinary dashboard, you can copy your **API enviroment variable**.
+
+
+### Heroku Deployment
+
+This project uses [Heroku](https://www.heroku.com/), a platform as a service that enables developers to build, run and operate applications entirely in the cloud.
+
+- Select **new** in the top-right hand corner in your heroku dashboard and select **create new app** from the dropdown menu.
+- Your app name must be unique, then choose the region closest to you, then slect **create app**.
+- From the new app settings, click **reveal config vars** ans set your enviroment variables.
+
+| Key | Value |
+| --- | --- |
+| `CLOUDINARY_URL` | Insert your own API key here. |
+| `DATABASE_URL` | insert your own ElephantSQL database url here. |
+| `DISABLE_COLLECTSTATIC` | 1 (*this is temporary and can be removed on your final deployment*) |
+| `SECRET_KEY` | This can be any random secret key. |
+| `PORT` | 8000 |
+
+Heroku needs two additional files in order to deploy properly.
+- requirements.txt file.
+- Procfile.
+
+You can install this projects ** requirements** using:
+- `pip3 install -r requirements.txt`
+
+If you have your own package that have been installed , then the requirements file needs updating using:
+- `pip3 freeze --local > requirements.txt`
+
+The **profile** can be created with the following command:
+- `echo web: gunicorn app_name.wsgi > Profile`
+- Make sure to replace 'app_name' with the name of your **own** app name.
+
+For Heroku deployment, follow these steps to deploy your site:
+
+- **Automatic** select 'enable automatic deployment'.
+- **Manual deployment** can be done by:
+    - By typing `heroku login -i` in the terminal.
+    - Set the remote for heroku: `heroku git:remote -a app_name` replace 'app_name' with your own app name.
+
+### Cloning 
+
+You can clone this repository by follwoing these steps:
+
+- Go to the [GitHub repository](https://github.com/AdamRalph123/Car-talk-blog).
+- Locate the code button above the list of files and click it.
+- Select if you prefer to clone using HTTPS, SSH or GitHub CLI and click copy button to copy the URL to your clipboard.
+- Open Git bash or Terminal.
+- Chanhe the current working directory to the one you the clonned directory.
+- In your IDE terminal, type the following command to clone the repository: `git clone https://github.com/AdamRalph123/Car-talk-blog`.
+- Press enter to create your clone.
+
+### Forking
+
+By forking this GitHub repository, you make a copy of the original repository on your GitHub account to view or makw chnages to it without affecting the ownders repository.
+
+Follow these steps to fork this repository:
+
+- Login into GitHub and locate [GitHub repository](https://github.com/AdamRalph123/Car-talk-blog).
+- At the top of the repository Just above the **settings** button on the menu, locate the **fork** button.
+- Once clicked, you should now have a copy of the original repository in your own GitHub account.
+
+
+## Credits
+
+I would like to credit [Code Institute](https://codeinstitute.net/) for allowing us to use the *I think therefore I blog* practice project as a base to our own blog.
+
+### Content
+
+| Source | Location | Notes |
+| --- | --- | --- |
+| [Prepopulate a Form Field Using Slugs and Integers](https://lookaway.info/zine/information/prepopulate-a-form-field-using-slugs-and-integers-django-20210410/) | view.py file | to help with slugs and integers. |
+| [Pexels](https://www.pexels.com/) | base.html, index.html, post detail.html and uploading posts | was used for downloading images that was used to upload to my blog. |
+| [Bootstrap](https://getbootstrap.com/) | base.html, index.html, post detail.html | was used for the front-end CSS framework responsiveness and pre-built components. |
+| [Footer](https://mdbootstrap.com/docs/standard/extended/social-media-icons-footer/) | base.html | was used for creating my footer. |
+
+
+
+ ##  Acknowledgement
+ I would like to thank:
+ 
+ - My mentor Jubril Akolade who is always there for support and to answer any questions i have for him.
+ - I would like to thank [Code Institute](https://codeinstitute.net/) student support for always helping me to solove my errors.
+ - The slack community (https://slack.com/intl/en-ie/https://slack.com/intl/en-ie/) which i can always rely on.
+ - I would like to thank the assessment team for taking their time to look over my project.
