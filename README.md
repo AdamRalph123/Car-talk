@@ -21,7 +21,7 @@ Some of the colours I used when developing this site, I kept the colours simple 
 
 ## Typography
 
-[Lato and Road Rage](https://fonts.google.com/) waa used for the site text.
+[Lato and Road Rage](https://fonts.google.com/) was used for the site text.
 [Font Awesome](https://fontawesome.com/) was used for the icons seen throughout the site.
 
 
@@ -37,7 +37,7 @@ Some of the colours I used when developing this site, I kept the colours simple 
 - As a Site User I want to be able to Upload a picture so other people can like/comment in it. `(SHOULD HAVE)`
 - As a user I would like to be able to edit and delete posts that I have uploaded. `(SHOULD HAVE)`
 - As a Site User / Admin I can view the number of likes/comments on each post so that I can see which is the most popular or viral. `(MUST HAVE)`
-- As a user I would like to be bale to share other users post. `(WONT HAVE)`
+- As a user I would like to be able to share other users post. `(WONT HAVE)`
 - As a user I would like to be able to have my own profile page. `(WONT HAVE)`
 - As a Site User I want to be able to Login using different social accounts. `(WONT HAVE)`
 
@@ -187,7 +187,7 @@ I used [balsamiq](https://balsamiq.com/wireframes) to design my site wireframes.
 
 - **Sign in**
 
-    - When users sign in they will be asked for their username and passowrd and if enetered incorrectly they will be notified there also a remember me button if they user wants to have thir username and password saved.
+    - When users sign in they will be asked for their username and passowrd and if enetered incorrectly they will be notified. There is also a remember me button if they user wants to have their username and password saved.
 
     ![screenshot](assets/screenshots/sign%20in%20page%20features.png)
 
@@ -217,13 +217,13 @@ I used [balsamiq](https://balsamiq.com/wireframes) to design my site wireframes.
 
 - **Edit and delete author**
 
-    - If the user wants to delete or edit a post its has to be their own post. An edit and delete button will be shown underneath their post.
+    - If the user wants to delete or edit a post, it has to be their own post. An edit and delete button will be shown underneath their post.
 
     ![screenshot](assets/screenshots/edit%20and%20delete%20post%20author.png)
 
 - **Delete post comformation**
 
-    -If the author of the post presses the delete button they will be a brought to a comfirmation page.
+    -If the author of the post clicks the delete button they will be a brought to a comfirmation page.
 
     ![screenshot](assets/screenshots/delete%20post%20comfiration.png)
 
@@ -242,7 +242,7 @@ I used [balsamiq](https://balsamiq.com/wireframes) to design my site wireframes.
 
 - **Admin logged in**
 
-    - When the admin/superuser is logged in an admin navigation will be shown which will bring them to the admin pannel as quicker access.
+    - When the admin/superuser is logged in an admin navigation will be shown which will bring them to the admin panel as quicker access.
 
     ![screenshot](assets/screenshots/admin%20logged%20in.png)
 
@@ -430,6 +430,7 @@ I would like to credit [Code Institute](https://codeinstitute.net/) for allowing
 | [Pexels](https://www.pexels.com/) | base.html, index.html, post detail.html and uploading posts | was used for downloading images that was used to upload to my blog. |
 | [Bootstrap](https://getbootstrap.com/) | base.html, index.html, post detail.html | was used for the front-end CSS framework responsiveness and pre-built components. |
 | [Footer](https://mdbootstrap.com/docs/standard/extended/social-media-icons-footer/) | base.html | was used for creating my footer. |
+| [Top Gear](https://www.topgear.com/) | Create a post page | was used for the content for each blog post when creating a new post. |
 
 
 
